@@ -1,34 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { PawPrint, User } from 'lucide-react';
+import { PawPrint, User, Menu, X } from 'lucide-react';
+import Button from "../components/Button";
 
 export function Navbar() {
-  const Button = ({ children, onClick, className, variant, size, ...props }) => {
-    const baseClass = 'inline-flex items-center justify-center font-medium focus:outline-none transition duration-150 ease-in-out';
-    const variantClass = {
-      default: 'bg-blue-500 text-white hover:bg-blue-600',
-      outline: 'bg-transparent border border-[#FF7B7B] text-[#FF7B7B] hover:bg-[#FF7B7B] hover:text-white',
-      ghost: 'bg-transparent text-blue-500 hover:bg-blue-100',
-    };
-    const sizeClass = {
-      default: 'px-4 py-2 text-base',
-      small: 'px-2 py-1 text-sm',
-      large: 'px-6 py-3 text-lg',
-      icon: 'p-2',
-    };
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-    const buttonClass = `${baseClass} ${variantClass[variant]} ${sizeClass[size]} ${className}`;
-
-    return (
-      <button onClick={onClick} className={buttonClass} {...props}>
-        {children}
-      </button>
-    );
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  
   return (
-    <header className="w-full border-b bg-white">
-      <div className="container flex h-16 items-center justify-between px-4">
+    <header className="w-full border-b bg-white shadow-sm">
+      <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <div className="flex items-center gap-2">
           <Link to="/" className="flex items-center gap-2">
             <PawPrint className="h-8 w-8 text-[#FF7B7B]" />
@@ -49,11 +34,11 @@ export function Navbar() {
             List a Pet
           </Link>
         </nav>
-        <div className="flex items-center gap-4">
-          <Button className="bg-[#FF7B7B] hover:bg-[#ff6262] px-4 py-2 rounded-md">
+        <div className="hidden md:flex items-center gap-4">
+          <Button className="bg-[#FF7B7B] hover:bg-[#ff6262] px-4 py-2 rounded-md shadow-md">
             Donate
           </Button>
-          <Button variant="outline" className="border-[#FF7B7B] px-4 py-2 rounded-md text-[#FF7B7B] hover:bg-[#FF7B7B] hover:text-white">
+          <Button variant="outline" className="border-[#FF7B7B] px-4 py-2 rounded-md text-[#FF7B7B] hover:bg-[#FF7B7B] hover:text-white shadow-md">
             Login/Register
           </Button>
           <Button variant="ghost" size="icon" className="rounded-full">
@@ -61,7 +46,37 @@ export function Navbar() {
             <span className="sr-only">User menu</span>
           </Button>
         </div>
+        <div className="md:hidden flex items-center gap-4">
+          <Button variant="ghost" size="icon" className="rounded-full" onClick={toggleMobileMenu}>
+            {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            <span className="sr-only">Toggle menu</span>
+          </Button>
+        </div>
       </div>
+      {isMobileMenuOpen && (
+        <div className="md:hidden bg-white shadow-md">
+          <nav className="flex flex-col items-center gap-4 p-4">
+            <Link to="/" className="text-gray-700 hover:text-gray-900">
+              Home
+            </Link>
+            <Link to="/about" className="text-gray-700 hover:text-gray-900">
+              About us
+            </Link>
+            <Link to="/find" className="text-gray-700 hover:text-gray-900">
+              Find a Pet
+            </Link>
+            <Link to="/list" className="text-gray-700 hover:text-gray-900">
+              List a Pet
+            </Link>
+            <Button className="bg-[#FF7B7B] hover:bg-[#ff6262] px-4 py-2 rounded-md shadow-md w-full">
+              Donate
+            </Button>
+            <Button variant="outline" className="border-[#FF7B7B] px-4 py-2 rounded-md text-[#FF7B7B] hover:bg-[#FF7B7B] hover:text-white shadow-md w-full">
+              Login/Register
+            </Button>
+          </nav>
+        </div>
+      )}
     </header>
   );
 }

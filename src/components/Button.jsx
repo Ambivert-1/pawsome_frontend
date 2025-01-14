@@ -21,3 +21,4 @@ const Button = ({ children, onClick, className, variant, size, ...props }) => {
       </button>
     );
   };
+  export default Button
