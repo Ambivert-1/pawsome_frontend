@@ -32,7 +32,7 @@ const Button = ({ children, onClick, className, variant, size, ...props }) => {
 const Landingpage = () => {
     return (
       <div className="flex min-h-screen flex-col">
-        <Navbar />
+       
         <main>
           <section className="bg-[#F0FFFC]">
             <div className="container mx-auto px-4 py-24 md:px-6">
@@ -53,7 +53,7 @@ const Landingpage = () => {
                     src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-ed3iQd3xs8kqXVklwlnmNHZxo02yy2.png"
                     alt="Illustration of people with pets"
                     className="object-contain w-full h-full"
-                  />
+                  /> 
                 </div>
               </div>
             </div>
