@@ -25,12 +25,12 @@ return () => window.removeEventListener("scroll", handleScroll);
 const navItems = [
 { path: "/", label: "Home", icon: <Home className="w-4 h-4" /> },
 {
-path: "/find",
+path: "/findpet",
 label: "Find a Pet",
 icon: <Search className="w-4 h-4" />,
 },
 {
-path: "/list",
+path: "/listpet",
 label: "List a Pet",
 icon: <PawPrint className="w-4 h-4" />,
 },
