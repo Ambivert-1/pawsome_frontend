@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import CloudinaryUploadWidget from '../components/CloudinaryUploadWidget';
 
 const PetListingForm = () => {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -26,24 +27,7 @@ const PetListingForm = () => {
             <label className="block text-gray-600 text-sm font-medium mb-2">
               Upload Pet's Photo
             </label>
-            <div className="relative border-2 border-dashed border-gray-300 rounded-lg flex justify-center items-center cursor-pointer hover:bg-gray-100 h-80 overflow-hidden">
-              {selectedFile ? (
-                <img
-                  src={URL.createObjectURL(selectedFile)}
-                  alt="Pet Photo"
-                  className="w-full h-full object-cover"
-                />
-              ) : (
-                <span className="text-gray-500 text-sm">Choose a file or drag and drop it here</span>
-              )}
-              <input
-                type="file"
-                accept="image/*"
-                onChange={handleFileChange}
-                id="pet-photo"
-                className="absolute top-0 left-0 w-full h-full opacity-0 cursor-pointer"
-              />
-            </div>
+<CloudinaryUploadWidget/>
           </div>
 
           {/* Form Fields (on the right) */}
