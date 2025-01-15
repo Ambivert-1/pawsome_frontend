@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import { PawPrint } from "lucide-react";
 
 const PetListingForm = () => {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -15,13 +16,16 @@ const PetListingForm = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center py-16"> 
+    <div className="min-h-screen bg-gradient-to-b from-[#F0FFFC] to-white flex flex-col items-center justify-center py-32">
       <div className="bg-white p-10 rounded-lg shadow-xl w-full max-w-4xl">
         <h2 className="text-3xl font-bold text-center text-pink-500 mb-8">
           List a Pet for Adoption
         </h2>
 
-        <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <form
+          onSubmit={handleSubmit}
+          className="grid grid-cols-1 md:grid-cols-2 gap-6"
+        >
           <div className="md:col-span-1">
             <label className="block text-gray-600 text-sm font-medium mb-2">
               Upload Pet's Photo
@@ -34,7 +38,9 @@ const PetListingForm = () => {
                   className="w-full h-full object-cover"
                 />
               ) : (
-                <span className="text-gray-500 text-sm">Choose a file or drag and drop it here</span>
+                <span className="text-gray-500 text-sm">
+                  Choose a file or drag and drop it here
+                </span>
               )}
               <input
                 type="file"
@@ -50,7 +56,10 @@ const PetListingForm = () => {
           <div className="md:col-span-1">
             {/* Title */}
             <div>
-              <label htmlFor="title" className="block text-gray-600 text-sm font-medium mb-2">
+              <label
+                htmlFor="title"
+                className="block text-gray-600 text-sm font-medium mb-2"
+              >
                 Title
               </label>
               <input
@@ -63,33 +72,44 @@ const PetListingForm = () => {
 
             {/* Description */}
             <div>
-              <label htmlFor="description" className="mt-2 block text-gray-600 text-sm font-medium mb-2">
+              <label
+                htmlFor="description"
+                className="mt-5 block text-gray-600 text-sm font-medium mb-2 "
+              >
                 Description
               </label>
               <textarea
                 id="description"
                 placeholder="Add a detailed description"
-                className="w-full p-2 border border-gray-300 rounded-md focus:outline-pink-500 h-64" 
+                className="w-full p-2 border border-gray-300 rounded-md focus:outline-pink-500 h-56"
               ></textarea>
             </div>
           </div>
 
           {/* Breed, Age, Vaccination Status, and Location (full width) */}
           <div className="md:col-span-2 flex gap-2 flex-col">
-            {/* Breed */}
+            {/* Type of pet */}
             <div>
-              <label htmlFor="breed" className="block text-gray-600 text-sm font-medium mb-2">
+              <label
+                htmlFor="type"
+                className="block text-gray-600 text-sm font-medium mb-2"
+              >
                 Type of pet
               </label>
               <input
                 type="text"
                 placeholder="Dog/Cat/Rabbit"
-                id="breed"
+                id="type"
                 className="w-full p-2 border border-gray-300 rounded-md focus:outline-pink-500 h-12"
               />
             </div>
+
+            {/* Breed */}
             <div>
-              <label htmlFor="breed" className="block text-gray-600 text-sm font-medium mb-2">
+              <label
+                htmlFor="breed"
+                className="block text-gray-600 text-sm font-medium mb-2"
+              >
                 Breed
               </label>
               <input
@@ -102,7 +122,10 @@ const PetListingForm = () => {
 
             {/* Age */}
             <div>
-              <label htmlFor="age" className="block text-gray-600 text-sm font-medium mb-2">
+              <label
+                htmlFor="age"
+                className="block text-gray-600 text-sm font-medium mb-2"
+              >
                 Age
               </label>
               <input
@@ -115,7 +138,10 @@ const PetListingForm = () => {
 
             {/* Vaccination Status */}
             <div>
-              <label htmlFor="vaccinationStatus" className="block text-gray-600 text-sm font-medium mb-2">
+              <label
+                htmlFor="vaccinationStatus"
+                className="block text-gray-600 text-sm font-medium mb-2"
+              >
                 Vaccination Status
               </label>
               <select
@@ -130,7 +156,10 @@ const PetListingForm = () => {
 
             {/* Location */}
             <div>
-              <label htmlFor="location" className="block text-gray-600 text-sm font-medium mb-2">
+              <label
+                htmlFor="location"
+                className="block text-gray-600 text-sm font-medium mb-2"
+              >
                 Location
               </label>
               <input
@@ -142,13 +171,15 @@ const PetListingForm = () => {
             </div>
           </div>
 
-          {/* Submit Button */}
-          <button
-            type="submit"
-            className="bg-pink-500 hover:bg-pink-600 text-white py-3 px-6 rounded-md mt-8 w-full"
-          >
-            Save
-          </button>
+          <div className="md:col-span-2 flex justify-center">
+            <button
+              type="submit"
+              className="bg-pink-500 hover:bg-pink-600 text-white py-3 px-6 rounded-md mt-8 flex items-center gap-2"
+            >
+              <PawPrint className="w-5 h-5" />
+              Save
+            </button>
+          </div>
         </form>
       </div>
     </div>
