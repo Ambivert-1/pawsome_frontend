@@ -31,10 +31,12 @@ const Landingpage = () => {
                   for you. Every tail wag brings joy! 🐶
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                  <Button className="transform hover:scale-105 transition-transform bg-[#FF7B7B] hover:bg-[#ff6262] px-8 py-4 rounded-full text-lg font-medium text-white shadow-lg hover:shadow-xl flex items-center justify-center gap-2">
-                    <PawPrint className="w-5 h-5" />
-                    Start Adoption Journey
-                  </Button>
+                  <Link to="/login">
+                    <Button className="transform hover:scale-105 transition-transform bg-[#FF7B7B] hover:bg-[#ff6262] px-8 py-4 rounded-full text-lg font-medium text-white shadow-lg hover:shadow-xl flex items-center justify-center gap-2">
+                      <PawPrint className="w-5 h-5" />
+                      Start Adoption Journey
+                    </Button>
+                  </Link>
                 </div>
               </div>
               <div className="relative h-[400px] lg:h-[600px] transform hover:scale-105 transition-transform duration-300">
@@ -49,7 +51,7 @@ const Landingpage = () => {
         </section>
 
         {/* Features Section */}
-        <section className=" bg-gradient-to-b from-[#F0FFFC] to-white">
+        <section className="bg-gradient-to-b from-[#F0FFFC] to-white">
           <div className="container mx-auto px-4 max-w-7xl">
             <h2 className="text-center text-3xl md:text-4xl font-bold mb-16 bg-gradient-to-r from-[#40B3A2] to-[#FF7B7B] bg-clip-text text-transparent">
               Ways to Make a Difference
@@ -64,6 +66,7 @@ const Landingpage = () => {
                     "Browse through adorable pets waiting for their home.",
                   buttonText: "Search Pets",
                   color: "bg-[#FFE2E2]",
+                  path: "/findpet",
                 },
                 {
                   icon: <Home className="h-8 w-8 text-[#FF7B7B]" />,
@@ -72,6 +75,7 @@ const Landingpage = () => {
                     "Help a furry friend find their perfect family match.",
                   buttonText: "Create Profile",
                   color: "bg-[#E2F5FF]",
+                  path: "/listpet",
                 },
                 {
                   icon: <Heart className="h-8 w-8 text-[#FF9494]" />,
@@ -80,6 +84,7 @@ const Landingpage = () => {
                     "Your love helps give pets a second chance at happiness.",
                   buttonText: "Donate Today",
                   color: "bg-[#F0FFF4]",
+                  path: "/donate",
                 },
               ].map((feature, index) => (
                 <div key={index} className="group">
@@ -93,9 +98,11 @@ const Landingpage = () => {
                       {feature.title}
                     </h3>
                     <p className="text-gray-600 mb-6">{feature.description}</p>
-                    <Button className="bg-gradient-to-r from-[#40B3A2] to-[#389887] hover:opacity-90 text-white px-6 py-3 rounded-full transform hover:scale-105 transition-all">
-                      {feature.buttonText}
-                    </Button>
+                    <Link to={feature.path}>
+                      <Button className="bg-gradient-to-r from-[#40B3A2] to-[#389887] hover:opacity-90 text-white px-6 py-3 rounded-full transform hover:scale-105 transition-all">
+                        {feature.buttonText}
+                      </Button>
+                    </Link>
                   </div>
                 </div>
               ))}
@@ -116,11 +123,7 @@ const Landingpage = () => {
                 making adoption simple and joyful. Together, we're creating
                 tail-wagging happiness, one adoption at a time! 🐾
               </p>
-              <div className="pt-8">
-                <Button className="bg-gradient-to-r from-[#FF7B7B] to-[#40B3A2] text-white px-8 py-4 rounded-full transform hover:scale-105 transition-all shadow-lg hover:shadow-xl">
-                  Join Our Mission
-                </Button>
-              </div>
+              
             </div>
           </div>
         </section>
