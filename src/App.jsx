@@ -6,6 +6,8 @@ import SignupPage from './pages/Signup';
 import FindPet from './pages/FindPet';
 import ListPet from './pages/ListPet';
 import Donate from './pages/Donate';
+import DonateButton from './components/DonateButton';
+import './App.css';
 
 
 
@@ -19,7 +21,7 @@ function App() {
         <Route path="/findpet" element={<FindPet/>}/>
         <Route path="/listpet" element={<ListPet/>}/>
         <Route path="/donate" element={<Donate/>}/>
-
+        <Route path="/donatebutton" element={<DonateButton/>}/>
       </Routes>
    
   );
