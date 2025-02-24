@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import "./Donate.css"; // Ensure this path is correct
+import "./Donate.css"; 
 
 const Donate = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     amount: "",
-    currency: "USD", // Default currency
-    paymentMethod: "creditCard", // Default payment method
+    currency: "USD", 
+    paymentMethod: "creditCard", 
   });
 
   const handleChange = (e) => {
