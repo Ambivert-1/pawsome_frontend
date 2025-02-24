@@ -1,0 +1,32 @@
+.App {
+    text-align: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  h1 {
+    color: #333;
+  }
+  
+  .contact-info {
+    margin: 20px 0;
+    font-size: 16px;
+  }
+  
+  .services, .resources, .company {
+    margin: 20px 0;
+  }
+  
+  .services h2, .resources h2, .company h2 {
+    color: #007bff;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  ul li {
+    margin: 10px 0;
+    font-size: 14px;
+  }
