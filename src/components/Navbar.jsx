@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { PawPrint, User, Menu, X, Heart, Search, Home } from "lucide-react";
-import Button from "../components/Button";
+import Button from "./Button";
+import "./Navbar.css";
 
 export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
