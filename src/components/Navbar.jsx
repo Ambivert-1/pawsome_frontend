@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import { Menu, X, PawPrint } from "lucide-react";
-import "./Navbar.css"; // Ensure this path is correct
+import { Button } from "@/components/ui/button"; 
+import { Menu, X, PawPrint, User, Heart, Search, Home } from "lucide-react";
+import "./Navbar.css";
+
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
